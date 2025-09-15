@@ -53,11 +53,11 @@ cp ./rc.local /etc/
 
 #xorg
 yes | pacman -S xorg-server
-yes | pacman -S xorg-apps
+pacman -S xorg-apps
 yes | pacman -S xf86-video-intel
 
 #kde
-yes | pacman -S plasma-meta
+pacman -S plasma-meta
 #yes | pacman -S kde-applications-meta
 yes | pacman -S sddm
 systemctl enable sddm
@@ -66,7 +66,7 @@ systemctl enable sddm
 #yes | pacman -S fcitx-sogoupinyin
 #yes | pacman -S fcitx-im
 #yes | pacman -S fcitx-configtool
-yes | pacman -S fcitx5-im
+pacman -S fcitx5-im
 yes | pacman -S fcitx5-chinese-addons
 yes | pacman -S fcitx5-pinyin-zhwiki
 
