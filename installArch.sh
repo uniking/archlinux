@@ -5,16 +5,20 @@
 
 #disk
 #fdisk -l
-#cfdisk /dev/sdb
+#dd if=/dev/zero of=/dev/sdb count=1 bs=512
+#cfdisk /dev/sdb #choose gpt format
+#fdisk /dev/sdb 
+##t command to change /dev/sdb1 uefi, and q command to exit
+#mkfs.fat -F 32 /dev/sdb1
 #mkfs.ext4 /dev/sdb2
 #mount /dev/sdb2 /mnt
-#mount --mkidr /dev/sdb1 /mnt/boot
+#mount --mkdir /dev/sdb1 /mnt/boot/EFI
 
 #mirrors
 sed -i -e '1iServer = https://mirrors.163.com/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
 
 #base
-pacstrap -K /mnt base linux linux-firmware
+pacstrap -K /mnt base linux linux-firmware vim
 genfstab -U /mnt >> /mnt/etc/fstab
 
 #arch-chroot /mnt

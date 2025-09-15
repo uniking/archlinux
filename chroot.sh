@@ -8,7 +8,7 @@ echo -e "[archlinuxcn]\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxc
 #time
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 yes | pacman -S ntp
-ntpdate -u ntp.api.bz #update time from network
+ntpdate -u ntp.ntsc.ac.cn #update time from network
 hwclock --systohc
 
 yes | pacman -Sy
@@ -34,10 +34,9 @@ echo "set general user password"
 passwd $generaluser
 
 #grub
-yes | pacman -S grub
-echo "set grub-install disk, example input /dev/sdb"
-read diskn
-grub-install --target=i386-pc $diskn
+yes | pacman -S grub efibootmgr
+#bios enable EFI boot
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #network
