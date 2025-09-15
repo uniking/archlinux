@@ -1,17 +1,13 @@
 #!/bin/bash
 #https://wiki.archlinux.org/
 
-pip install numpy
-pip install pandas
-pip install scikit-learn
-pip install capstone
-pip install pillow
-pip install opencv-python
+yes | pacman -S python-numpy
+yes | pacman -S python-pandas
+yes | pacman -S python-pillow
 yes | pacman -S gimp
 yes | pacman -S tesseract
 yes | pacman -S tesseract-data-chi_sim
 yes | pacman -S tesseract-data-eng
-pip install pytesseract
 yes | pacman -S lighttpd
 systemctl enable lighttpd
 yes | pacman -S boost
@@ -20,24 +16,25 @@ yes | pacman -S freerdp
 yes | pacman -S fceux
 yes | pacman -S calibre #ebook reader
 yes | pacman -S kcptun
-yes | pacman -S v2raya
-systemctl enable v2raya
-systemctl start v2raya
-yes | pacman -S qemu
+#install gui-for-clash
+#yes | pacman -S v2raya
+#systemctl enable v2raya
+#systemctl start v2raya
+pacman -S qemu
 yes | pacman -S docker
-yes | pacman -S freeplane
+pacman -S freeplane
 yes | pacman -S meld
-yes | pacman -S wxhexeditor-git
+#yes | pacman -S wxhexeditor-git
 yes | pacman -S dia
 yes | pacman -S filezilla
-yes | pacman -S google-chrome
+#yes | pacman -S google-chrome
+yes | pacman -S chromium
 yes | pacman -S jdk8-openjdk
-yes | pacman -S eclipse-java
 yes | pacman -S gpicview
 yes | pacman -S google-earth-pro
 yes | pacman -S wireshark-cli
-yes | pacman -S qtox
-yes | pacman -S pacvis-git
+#yes | pacman -S qtox
+#yes | pacman -S pacvis-git
 #yes | pacman -S deluge
 #yes | pacman -S ktorrent
 #yes | pacman -S motrix-git
@@ -85,7 +82,7 @@ yes | pacman -S okteta
 yes | pacman -S git
 yes | pacman -S gitg
 
-yes | pacman -S wkhtmltopdf
+#yes | pacman -S wkhtmltopdf
 
 yes | pacman -S jad #java decompile
 yes | pacman -S vim-jad #vim-plugins
@@ -103,6 +100,8 @@ systemctl enable earlyoom
 
 yes | pacman -S pkgconf
 yes | pacman -S autoconf
+yes | pacman -S code
 yes | pacman -S yay
-yes | yay -S ifuse
-yes | yay -S sqlitebrowser
+yay -S ifuse
+yay -S sqlitebrowser
+yay -S gui-for-clash

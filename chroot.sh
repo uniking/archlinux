@@ -29,7 +29,7 @@ echo "set root password"
 passwd
 echo "add general user"
 read generaluser
-useradd -m $generaluser
+useradd -m -G wheel -s /bin/bash $generaluser
 echo "set general user password"
 passwd $generaluser
 
