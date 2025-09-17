@@ -36,7 +36,7 @@ passwd $generaluser
 #grub
 yes | pacman -S grub efibootmgr
 #bios enable EFI boot
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=grub
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #network

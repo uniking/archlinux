@@ -12,7 +12,7 @@
 #mkfs.fat -F 32 /dev/sdb1
 #mkfs.ext4 /dev/sdb2
 #mount /dev/sdb2 /mnt
-#mount --mkdir /dev/sdb1 /mnt/boot/EFI
+#mount --mkdir /dev/sdb1 /mnt/efi
 
 #mirrors
 sed -i -e '1iServer = https://mirrors.163.com/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
